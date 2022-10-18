@@ -15,14 +15,17 @@ import SignOut from '../pages/SignOut';
 import NavBar from '../components/NavBar';
 import SignIn from '../pages/SignIn';
 import NotAuthorized from '../pages/NotAuthorized';
+import Murphys from '../pages/Murphys';
+import TopBar from '../components/TopBar';
+import BottomMenu from '../components/BottomMenu';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => (
   <Router>
     <div className="d-flex flex-column min-vh-100">
-      <NavBar />
+      <TopBar />
       <Routes>
-        <Route exact path="/" element={<Landing />} />
+        <Route exact path="/" element={<Murphys />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signout" element={<SignOut />} />
@@ -34,7 +37,7 @@ const App = () => (
         <Route path="/notauthorized" element={<NotAuthorized />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <Footer />
+      <BottomMenu />
     </div>
   </Router>
 );
